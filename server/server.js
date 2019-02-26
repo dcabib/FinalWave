@@ -29,6 +29,8 @@ cloudinary.config({
     api_secret: process.env.CLOUD_API_SECRET
 });
 
+
+
 // STORAGE MULTER CONFIG
 let storage = multer.diskStorage({
     destination:(req,file,cb)=>{
