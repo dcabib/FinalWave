@@ -431,7 +431,7 @@ app.get('/api/users/removeFromCart',auth,(req,res)=>{
             })
         }
     );
-})
+});
 
 app.post('/api/users/successBuy',auth,(req,res)=>{
     let history = [];
@@ -451,7 +451,7 @@ app.post('/api/users/successBuy',auth,(req,res)=>{
             quantity: item.quantity,
             paymentId: req.body.paymentData.paymentID
         })
-    })
+    });
 
     // PAYMENTS DASH
     transactionData.user = {
@@ -459,7 +459,8 @@ app.post('/api/users/successBuy',auth,(req,res)=>{
         name: req.user.name,
         lastname: req.user.lastname,
         email: req.user.email
-    }
+    };
+
     transactionData.data = {
         ...req.body.paymentData,
         porder: po
@@ -492,7 +493,7 @@ app.post('/api/users/successBuy',auth,(req,res)=>{
                     )
                 },(err)=>{
                     if(err) return res.json({success:false,err});
-                    sendEmail(user.email,user.name,null,"purchase",transactionData)
+                    sendEmail(user.email,user.name,null,"purchase",transactionData);
                     res.status(200).json({
                         success:true,
                         cart: user.cart,

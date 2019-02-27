@@ -15,7 +15,7 @@ const getEmailData = (to,name,token,template,actionData) =>{
                 to,
                 subject: `Welcome to waves ${name}`,
                 html: welcome()
-            }
+            };
         break;
         case "purchase":
             data = {
@@ -23,7 +23,7 @@ const getEmailData = (to,name,token,template,actionData) =>{
                 to,
                 subject: `Thanks for shopping with us ${name}`,
                 html: purchase(actionData)
-            }
+            };
         break;
         case "reset_password":
             data = {
@@ -31,7 +31,7 @@ const getEmailData = (to,name,token,template,actionData) =>{
                 to,
                 subject: `Hey ${name}, reset your pass`,
                 html: resetPass(actionData)
-            }
+            };
         break;
         default:
             data;
@@ -42,15 +42,16 @@ const getEmailData = (to,name,token,template,actionData) =>{
 
 const sendEmail = (to,name,token,type,actionData = null) => {
 
+    console.log ()
     const smtpTransport = mailer.createTransport({
         service:"Gmail",
         auth:{
-            user: "waves.guitars.rev@gmail.com",
+            user: "danielcabib@gmail.com",
             pass: process.env.EMAIL_PASS
         }
     });
 
-    const mail = getEmailData(to,name,token,type,actionData)
+    const mail = getEmailData(to,name,token,type,actionData);
 
     smtpTransport.sendMail(mail,function(error,response){
         if(error){
@@ -60,6 +61,6 @@ const sendEmail = (to,name,token,type,actionData = null) => {
         }
         smtpTransport.close();
     })
-}
+};
 
-module.exports = { sendEmail }
+module.exports = { sendEmail };

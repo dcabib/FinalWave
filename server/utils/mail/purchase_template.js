@@ -1,7 +1,7 @@
 const purchase = data => {
 
     const getItems = () =>{
-        let template;
+        let template = '';
 
         data.product.forEach(item=>{
             template += `
