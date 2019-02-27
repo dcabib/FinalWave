@@ -53,6 +53,12 @@ class ReserUser extends Component {
                         formSuccess:true
                     })
                 }
+                else {
+                    this.setState({
+                        formError: true
+
+                    })
+                }
             })
         } else {
             this.setState({

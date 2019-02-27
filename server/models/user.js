@@ -90,10 +90,7 @@ userSchema.methods.generateResetToken = function(cb){
             if(err) return cb(err);
             cb(null,user);
         })
-    }).catch( error );
-    {
-        console.log ("Erro no generateResetToken: " + error);
-    }
+    })
 }
 
 
