@@ -1,0 +1,139 @@
+.slick-dots {
+    position: absolute;
+    bottom: 10px;
+}
+
+.slick-dots li {
+    transform: scale(2);
+}
+
+.card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .slick-dots {
+        transform: scale(0.7);
+    }
+
+    .slick-dots li {
+        transform: scale(2);
+    }
+
+    .container,
+    .wrapper {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .container .left,
+    .container .right,
+    .wrapper .right,
+    .wrapper .left {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /*********************
+    *        HEADER      *
+    **********************/
+
+    header .logo,
+    header .container .right .top,
+    header .container .right .bottom {
+        text-align: center;
+    }
+
+    header .logo {
+        padding: 5px 0;
+    }
+
+    header .container .right .top {
+        border-top: 1px solid #ffffff;
+    }
+
+    /*********************
+    *        FOOTER      *
+    **********************/
+
+    footer .wrapper h2 {
+        text-align: center;
+    }
+
+    footer .wrapper {
+        padding: 10px;
+    }
+
+    footer .business_nfo {
+        display: block;
+    }
+
+    footer .business_nfo .tag {
+        width: 100%;
+    }
+
+    /*****************************
+    *        FEATURED IMAGE      *
+    ******************************/
+
+    .featured_container .featured_action {
+        top: 40%;
+        left: 1%;
+        right: 1%;
+    }
+
+    .featured_container .featured_action .tag {
+        margin: 0 auto;
+        font-size: 60px;
+    }
+
+    .featured_container .featured_action .tag.low_title {
+        margin: 0 auto;
+        margin-top: 5px;
+        font-size: 32px;
+    }
+
+    .link_default {
+        margin: 0 auto;
+        margin-top: 5px;
+    }
+
+    /********************
+    *        CARDS      *
+    *********************/
+
+    .card_wrapper {
+        display: block;
+    }
+
+    .card_item_wrapper {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /*****************************
+    *        HOME PROMOTION      *
+    ******************************/
+
+    .home_promotion .home_promotion_img {
+        padding: 20% 20px;
+    }
+
+    .home_promotion .tag.title {
+        font-size: 35px;
+    }
+
+    .home_promotion .tag.low_title {
+        font-size: 25px;
+    }
+}
