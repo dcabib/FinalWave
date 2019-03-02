@@ -12,14 +12,24 @@
     flex-wrap: wrap;
 }
 
+html,
+body {
+    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+}
+
+footer .wrapper {
+    padding: 10px;
+}
+
 @media screen and (max-width: 768px) {
 
-    html,
-    body {
-        width: 100%;
-        width: 100vw;
-        overflow-x: hidden;
-    }
+
 
     .slick-dots {
         transform: scale(0.7);
@@ -69,17 +79,22 @@
         text-align: center;
     }
 
-    footer .wrapper {
-        padding: 10px;
+    footer .wrapper .left:last-child div {
+        text-align: center;
     }
 
     footer .business_nfo {
-        display: block;
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
     }
 
     footer .business_nfo .tag {
-        width: 100%;
+        width: 300px;
     }
+
+
 
     /*****************************
     *        FEATURED IMAGE      *
@@ -112,7 +127,8 @@
     *********************/
 
     .card_wrapper {
-        display: block;
+        margin: 0 auto;
+        max-width: 600px;
     }
 
     .card_item_wrapper {
@@ -120,7 +136,7 @@
         max-width: 300px;
         margin: 0 auto;
     }
-    
+
     /*****************************
     *        HOME PROMOTION      *
     ******************************/
