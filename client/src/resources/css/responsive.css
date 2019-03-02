@@ -21,6 +21,7 @@ body {
 
 .container {
     width: 100%;
+    max-width: 1100px;
 }
 
 footer .wrapper {
@@ -151,5 +152,41 @@ footer .wrapper {
 
     .home_promotion .tag.low_title {
         font-size: 25px;
+    }
+
+    /*******************
+    *        SHOP      *
+    ********************/
+
+    .shop_wrapper {
+        display: block;
+    }
+
+    .shop_wrapper .left {
+        padding: 10px;
+    }
+
+    .card_block_shop {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    .shop_wrapper .card_item_wrapper {
+        width: 300px;
+        overflow: hidden;
+    }
+    .shop_wrapper .card_item_wrapper.grid_bars {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .card_item_wrapper.grid_bars {
+        display: block;
+    }
+
+    .card_item_wrapper.grid_bars .image {
+        width: auto;
     }
 }
