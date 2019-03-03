@@ -186,6 +186,12 @@ footer .wrapper {
     }
     .card_item_wrapper.grid_bars .image {
         width: auto;
+        border-top: 1px solid #eeeeee;
+        border-right: 1px solid #eeeeee;
+        border-left: 1px solid #eeeeee;
+    }
+    .card_block_shop {
+        width: 300px;
     }
     /*****************************
     *        REGISTER/LOGIN      *
@@ -199,9 +205,6 @@ footer .wrapper {
     ************************/
     .form_block_two {
         display: block;
-    }
-    .formBlock {
-        /* margin-bottom: 0; */
     }
     .form_block_two .block:nth-child(1) {
         padding-right: 0;
@@ -218,6 +221,7 @@ footer .wrapper {
     .user_container .user_left_nav {
         max-width: 300px;
         margin: 0 auto;
+        border-right: 0;
     }
     .user_container .user_left_nav .links a {
         width: 100%;
