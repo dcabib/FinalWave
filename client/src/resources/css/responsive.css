@@ -7,6 +7,15 @@
     transform: scale(2);
 }
 
+header .fa-user {
+    margin-right: 5px;
+    color: #fff;
+}
+
+header .user-link {
+    text-transform: capitalize;
+}
+
 .card_wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +39,19 @@ footer .wrapper {
 
 .product_image_wrapper {
     width: 500px;
+}
+.bck_b_dark {
+    clear: both;
+}
+
+.card_item_wrapper.grid_bars > div:first-child {
+    display: flex;
+    align-items: center;
+    border: solid 1px #e6e6e6;
+    border-right: 0;
+}
+.card_item_wrapper.grid_bars .image {
+    width: 250px;
 }
 
 @media screen and (max-width: 768px) {
@@ -193,6 +215,11 @@ footer .wrapper {
     .card_block_shop {
         width: 300px;
     }
+
+    .card_item_wrapper.grid_bars > div:first-child {
+        display: block;
+        border: 0;
+    }
     /*****************************
     *        REGISTER/LOGIN      *
     ******************************/
@@ -215,6 +242,28 @@ footer .wrapper {
     /*************************
     *        USER/ADMIN      *
     **************************/
+    .user_container .links {
+        display: none;
+    }
+    .user_container .links.active {
+        display: block;
+    }
+    .user_container h2.switch-visiblity{
+        position: relative;
+        font-size: 30px;
+    }
+    .user_container h2.switch-visiblity::after {
+        content: ">";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        transform: rotate(90deg);
+    }
+    .user_container h2.switch-visiblity.active::after {
+        content: "<";
+    }
     .user_container {
         display: block;
     }
@@ -222,6 +271,7 @@ footer .wrapper {
         max-width: 300px;
         margin: 0 auto;
         border-right: 0;
+        margin-bottom: 15px;
     }
     .user_container .user_left_nav .links a {
         width: 100%;
@@ -251,7 +301,9 @@ footer .wrapper {
         padding: 8px 4px;
         font-size: 15px;
     }
-    /* OTHERS */
+    /********************
+    *        OTHER      *
+    *********************/
     .dropzone_box {
         float: none;
         width: auto;

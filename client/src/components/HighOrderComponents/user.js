@@ -46,23 +46,26 @@ const UserLayout = (props) => {
             </Link>
         ))
     )
-
-
+    let switchVisiblity = elem => {
+        let cont = document.querySelector(".user_container .user_left_nav")
+        cont.querySelectorAll("h2")[elem].classList.toggle("active")
+        cont.querySelectorAll("div")[elem].classList.toggle("active")
+    }   
     return (
         <div className="container">
             <div className="user_container">
                 <div className="user_left_nav">
-                    <h2>My account</h2>
+                    <h2 onClick={()=>switchVisiblity(0)} className="switch-visiblity">My account</h2>
                     <div className="links">
                         { generateLinks(links)}
                     </div>
                     { props.user.userData.isAdmin ?
-                        <div>
-                            <h2>Admin</h2>
+                        <React.Fragment>
+                        <h2 onClick={()=>switchVisiblity(1)} className="switch-visiblity">Admin</h2>
                             <div className="links">
                                 { generateLinks(admin)}
                             </div>
-                        </div>
+                        </React.Fragment>
                     :null
                     }
 

@@ -4,6 +4,9 @@ import { Link, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../../redux/actions/user_actions';
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faUser from '@fortawesome/fontawesome-free-solid/faUser';
+
 class Header extends Component {
 
     state = {
@@ -77,9 +80,10 @@ class Header extends Component {
             </div>
 
         :
-        <Link to={item.linkTo} key={i}>
+        (<Link to={item.linkTo} key={i} className={item.withIcon ? "user-link": null}>
+            {item.withIcon ? <FontAwesomeIcon icon={faUser} className="icon" />: null}
             {item.name}
-        </Link>
+        </Link>)
     )
 
 
@@ -131,6 +135,15 @@ class Header extends Component {
                 </div>
             </header>
         );
+    }
+
+    componentDidUpdate(){
+        if(this.state.user[1].name == 'My Account') {
+            let tempState = this.state;
+            tempState.user[1].name = this.props.user.userData.name;
+            tempState.user[1].withIcon = true;
+            this.setState(tempState)
+        }
     }
 }
 
